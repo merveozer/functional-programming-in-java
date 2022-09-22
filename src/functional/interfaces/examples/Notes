@@ -1,0 +1,69 @@
+references: Akin Kaldiroglu & Geeks for Geeks 
+
+*Functional interfaces are also known as SAM (Single Abstract Method Interfaces). Because;
+ 	-Functional interfaces are interfaces that ensure that they include precisely only one abstract method.
+ 	-However, they can include any quantity of default and static methods. 
+ 	
+
+*They are used and executed by representing the interface with an annotation called "@FunctionalInterface".
+
+*This annotation is used to ensure that the functional interface can’t have more than one abstract method. 
+	 -@FunctionalInterface protect to make mistake (Preventive Medicine)
+	 
+*There are many interfaces that are converted into functional interface:
+	 -Runnable –> This interface only contains the run() method. //threads
+	 -Comparable –> This interface only contains the compareTo() method. 
+	 -ActionListener –> This interface only contains the actionPerformed() method. //Swing & GUI
+	 -Callable –> This interface only contains the call() method.//threads
+	 
+------------------------------------------------------------------------------------------------------------
+
+Java SE 8 included four main kinds of functional interfaces which can be applied in multiple situations. These are:
+	 -Consumer (no result) 
+	 -Predicate (boolean result) / usage of and & or
+	 -Function (input and output)
+	 -Supplier (no input only)
+	 
+	 
+CONSUMER
+--------
+
+	1) accept() -> This method accepts one value and performs the operation on the given argument
+	2) andThen() -> It returns a composed Consumer wherein the parameterized 
+					Consumer will be executed after the first one.
+					
+PREDICATE
+---------
+
+	1) isEqual(Object targetRef) -> Returns a predicate that tests if two arguments are equal 
+									according to Objects.equals(Object, Object).
+	2) and(Predicate other) -> logical AND
+	3) negate() -> Returns a predicate that represents the logical negation of this predicate.
+	4) or() -> logical OR
+	5) test(T t) -> Evaluates this predicate on the given argument.boolean test(T t) 
+	
+FUNCTION
+--------
+
+	1) apply()   -> This method takes in only one parameter t which is the function argument 
+				    and returns the function result which is of type R.
+	2) andThen() -> This method returns a composed function that applies the current function 
+				    first and then the after function
+    3) compose() -> This method returns a composed function that applies the current function 
+    				after the parameterized function
+	 
+	4) identity()-> This method returns a function that returns its own argument
+
+SUPPLIER
+--------
+
+	1) get()     -> This method does not take in any argument but produces a value of type T.
+	   But returns a value of type T.
+	   Supplier<Double> randomValue = () -> Math.random();
+	   
+	 
+	 
+	 
+	 
+	 
+	 
